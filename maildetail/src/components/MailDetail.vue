@@ -29,120 +29,119 @@
                     </div>
                     <template v-for="(mailDetail, index) in mailContent">
                         <div v-bind:key="'mailDetails_'+index" class="row">
-                        <div class="detailTitle">
+                            <div class="detailTitle">
 
-                            <!--MAIL FROM-->
-                            <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
-                            <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                <span>MAIL FROM : </span>
-                            </div>
-                            <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                <span>{{mailDetail.mail_from}}</span>
-                            </div>
-                            </div>
-                            <div class="clearfix"></div>
-
-                            <!--MAIL TO-->
-                            <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
-                            <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                <span>MAIL TO : </span>
-                            </div>
-                            <template v-for="(mailTo, index) in mailDetail.mail_to">
-                                <div v-bind:key="'mailto_'+index" class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                    <span>{{mailTo}}</span>
+                                <!--MAIL FROM-->
+                                <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
+                                    <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                        <span>MAIL FROM : </span>
+                                    </div>
+                                    <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                        <span>{{mailDetail.mail_from}}</span>
+                                    </div>
                                 </div>
-                                <div v-bind:key="'mailclearfix_'+index" class="clearfix"></div>
-                                <div v-bind:key="'mailblank_'+index" class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                    <!--NO DATA-->
+                                <div class="clearfix"></div>
+
+                                <!--MAIL TO-->
+                                <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
+                                    <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                        <span>MAIL TO : </span>
+                                    </div>
+                                    <template v-for="(mailTo, index) in mailDetail.mail_to">
+                                        <div v-bind:key="'mailto_'+index" class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                            <span>{{mailTo}}</span>
+                                        </div>
+                                        <div v-bind:key="'mailclearfix_'+index" class="clearfix"></div>
+                                        <div v-bind:key="'mailblank_'+index" class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                            <!--NO DATA-->
+                                        </div>
+                                    </template>
                                 </div>
-                            </template>
-                            </div>
-                            <div class="clearfix"></div>
+                                <div class="clearfix"></div>
 
-                            <!--SUBJECT-->
-                            <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
-                            <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                <span>SUBJECT : </span>
-                            </div>
-                            <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                <span>{{mailDetail.subject}}</span>
-                            </div>
-                            </div>
-                            <div class="clearfix"></div>
-
-                            <!--STATUS-->
-                            <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
-                            <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                <span>STATUS : </span>
-                            </div>
-                            <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                <span>{{mailDetail.status}}</span>
-                            </div>
-                            </div>
-                            <div class="clearfix"></div>
-
-                            <!--CREATED DATE-->
-                            <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
-                            <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                <span>CREATED DATE : </span>
-                            </div>
-                            <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                <span>{{mailDetail.created_date}}</span>
-                            </div>
-                            </div>
-                            <div class="clearfix"></div>
-
-                            <!--SENT AT-->
-                            <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
-                            <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                <span>SENT AT : </span>
-                            </div>
-                            <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                <span>{{mailDetail.sent_at}}</span>
-                            </div>
-                            </div>
-                            <div class="clearfix"></div>
-
-                            <!--TEMPLATE-->
-                            <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
-                            <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                <span>TEMPLATE : </span>
-                            </div>
-                            <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                <span>{{mailDetail.template}}</span>
-                            </div>
-                            </div>
-                            <div class="clearfix"></div>
-
-                            <!--ATTACHEMENTS-->
-                            <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
-                            <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                <span>ATTACHEMENTS : </span>
-                            </div>
-                            <template v-for="(attachements, index) in mailDetail.attachements">
-                                <div v-bind:key="'mailattachment_'+index" class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                    <span>{{attachements}}</span>
+                                <!--SUBJECT-->
+                                <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
+                                    <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                        <span>SUBJECT : </span>
+                                    </div>
+                                    <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                        <span>{{mailDetail.subject}}</span>
+                                    </div>
                                 </div>
-                                <div v-bind:key="'mailattachclear_'+index" class="clearfix"></div>
-                                <div v-bind:key="'mailattachblank_'+index" class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
-                                    <!--NO DATA-->
-                                </div>
-                            </template>
-                            </div>
-                            <div class="clearfix"></div>
+                                <div class="clearfix"></div>
 
-                        </div>
+                                <!--STATUS-->
+                                <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
+                                    <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                        <span>STATUS : </span>
+                                    </div>
+                                    <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                        <span>{{mailDetail.status}}</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <!--CREATED DATE-->
+                                <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
+                                    <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                        <span>CREATED DATE : </span>
+                                    </div>
+                                    <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                        <span>{{mailDetail.created_date}}</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <!--SENT AT-->
+                                <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
+                                    <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                        <span>SENT AT : </span>
+                                    </div>
+                                    <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                        <span>{{mailDetail.sent_at}}</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <!--TEMPLATE-->
+                                <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
+                                    <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                        <span>TEMPLATE : </span>
+                                    </div>
+                                    <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                        <span>{{mailDetail.template}}</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <!--ATTACHEMENTS-->
+                                <div class="col-xs-12 col-md-12 col-xl-12 col-sm-12 boxItem">
+                                    <div class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                        <span>ATTACHEMENTS : </span>
+                                    </div>
+                                    <template v-for="(attachements, index) in mailDetail.attachements">
+                                        <div v-bind:key="'mailattachment_'+index" class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                            <span>{{attachements}}</span>
+                                        </div>
+                                        <div v-bind:key="'mailattachclear_'+index" class="clearfix"></div>
+                                        <div v-bind:key="'mailattachblank_'+index" class="col-xs-6 col-md-6 col-xl-6 col-sm-6">
+                                            <!--NO DATA-->
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="clearfix"></div>
+
+                            </div>
                         </div>
                     </template>
                 </div>
             </div>
 
-            <div class="container">
-
-            </div>
+            <div class="container"></div>
         </section>
     </div>
 </template>
+
 <script>
     import {HTTP} from '../http-common';
     var $ = window.jQuery = require('jquery');
